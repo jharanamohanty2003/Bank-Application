@@ -7,13 +7,13 @@ class Bank():
         self.bal=bal
         self.mobno=mobno
         self.pin=pin
-    def Details(self):
+    def display_details(self):
         print(f'Name={self.name}')
         print(f'Acc Number={self.accno}')
         print(f'Mobile={self.mobno}')
-    def Withdrawn(self):
+    def withdraw(self):
         attempts=3
-        while attempts>3:
+        while attempts>0:
             print(f'No. of chances is {attempts}')
             if self.getpassword()==self.pin:
                 amount=int(input('enter the amount to withdraw:'))
@@ -35,7 +35,7 @@ class Bank():
         else:
             print('No chances')
             print('Try after 24 hours')
-    def Deposite():
+    def deposit(self):
          if self.accno==int(input('enter account number:')):
              amount=int(input('enter the amount to deposite:'))
              if amount%100==0:
@@ -49,7 +49,7 @@ class Bank():
                 print('Invalid Denominations')
          else:
             print('Invalid acc number')
-    def Checkbal(self):
+    def check_balance(self):
         attempts=3
         while attempts>0:
             print(f'No. of chances is {attempts}')
@@ -73,7 +73,10 @@ class Bank():
 cust1=Bank('user1',1234567890,10000,9876543210,1111)
 cust2=Bank('user2',1234560000,29999,9999999999,2222)
 cust3=Bank('user3',1234570000,50000,9999999998,3333)
-cust2.Details()
+cust2.display_details()
+cust3.display_details()
+cust3.deposit()
+
 
 
         
